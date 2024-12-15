@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+
+    <title>Interactive Mixtape</title>
+</head>
+<body>
+  
+  <div id="landing-page">
+    <h1>Dear Monica,</h1>
+    <p>I read your wishlist. And here's the deal. </br>
+      1. I can't write your thesis for you. Trust me, I tried. I am too dumb to decode hidden heritages. I don't even know what a phylogenetic analysis is if I'm being honest. </br>
+  2. I tried finding some good zines. People just don't make good zines anymore. Where did all the good zines go? Well I did get you this Mountain Goats zine I found on reddit but I can't vouch for its quality. </br>
+  3. I'm too incompetent to burn a CD. Also I have a Mac so, you know. 
+      </p>
+    <button id="enter-button">So, what did I do instead?</button>
+</div>
+
+<div id="second-landing-page" style="display: none;">
+    <p>So instead I set out to make this interpretative hybrid of all three. This website will be a sort of </p><div id="fancy-text">vaguely-your-thesis-inspired </br> annotated-mixtape-zine</div> <p>At first I thought I should make a mixtape of songs that narrate folk tales, but then I realize I only know about four such songs (a devastating blow), so I broadened the concept a little. Since you study common ancestry in global folktales, as well as their evolution over time, the concept is "modern takes on folk music" and "cross-country folk music/modern music polination". As an avid folk listener, this is all also (an oddly specific corner of) the music I really like. Actually maybe this whole thing is just an excuse to make someone other than me in this world listen to False Lankum. Anyways, enjoy queen.</p>
+    <button id="start-button">I present to you...</button>
+</div>
+
+<div id="third-landing-page" style="display: none;">
+    <h1>folklore (monica's version)</h1>
+</div>
+
+
+<!--   <div id="main-content"> -->
+
+<div class="playlist-container">
+  <div id="playlist-title">folklore </br>(monica's version)</div>
+    <ul class="playlist" id="playlist">
+    </ul>
+</div>
+
+<div id="video-background"></div>
+<div class="background-mask"></div>
+
+<div class="mixtape">
+    <div class="current-song">
+        <img id="song-art" src="" alt="Album Art">
+        <h2 id="song-title">Song Title</h2>
+        <h3 id="song-artist">Artist</h3>
+    </div>
+
+    <div class="controls">
+        <button id="prev-btn" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M18 5v14l-8-7 8-7zm-9 14h2V5H9v14z"></path>
+            </svg>
+        </button>
+        <button id="play-btn" aria-label="Play">
+            <svg id="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: block;">
+                <path d="M8 5v14l11-7L8 5z"></path>
+            </svg>
+            <svg id="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display: none;">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+            </svg>
+        </button>
+        <button id="next-btn" aria-label="Next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M6 19V5l8 7-8 7zm9 0V5h2v14h-2z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+</div>
+
+<div class="description-container">
+    <div class="description" id="song-description">
+        A description of the song will go here.
+    </div>
+</div>
+<!--   </div> -->
+
+<audio id="audio-player" src=""></audio>
+
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const firstLandingPage = document.getElementById('landing-page');
+        const secondLandingPage = document.getElementById('second-landing-page');
+        const thirdLandingPage = document.getElementById('third-landing-page');
+        const mainContent = document.getElementById('main-content');
+        const enterButton = document.getElementById('enter-button');
+
+        // Transition from the first landing page to the second
+        enterButton.addEventListener('click', () => {
+            firstLandingPage.style.opacity = '0';
+            firstLandingPage.style.transition = 'opacity 0.5s ease';
+            firstLandingPage.style.display = 'none';
+            secondLandingPage.style.display = 'flex';
+            secondLandingPage.style.opacity = '1';
+        });
+
+        // Transition from the second landing page to the third
+        const startButton = document.getElementById('start-button'); // Ensure this button exists in the second landing page
+        startButton.addEventListener('click', () => {
+            secondLandingPage.style.opacity = '0';
+            secondLandingPage.style.transition = 'opacity 0.5s ease';
+            // setTimeout(() => {
+                secondLandingPage.style.display = 'none';
+                thirdLandingPage.style.display = 'flex';
+                thirdLandingPage.style.opacity = '1';
+            // }, 500);
+
+            // Transition from the third landing page to the main content
+            setTimeout(() => {
+                thirdLandingPage.style.opacity = '0';
+                thirdLandingPage.style.transition = 'opacity 0.5s ease';
+                thirdLandingPage.style.display = 'none';
+                // mainContent.style.display = 'flex';
+            }, 2000); // Show the third landing page for 2 seconds
+        });
+    });
+
+  </script>
+
+</body>
+</html>
