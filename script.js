@@ -16,8 +16,7 @@
     description: "From the same lead singer as Lankum, another sort of experimental modern Irish folk band, this time performing folk tale The Cruel Mother AKA Greenwood Sidey, and trying to bring attention to the persecution of women in the associated 9 minute short featuring Olwen Fouéré.",
     videoClip: { id: "fuaLiowElxE", start: 192, end: 208 },
       frames: {
-        left: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/7d780081-6482-4875-a0c4-b35b7769f97d/Screenshot_2024-12-15_at_17.58.58.png?table=block&id=15d95eca-382d-808a-9944-f94d431a8b77&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=fIQjoYHDtCnNyJ8FeSujKsm6SMht9g5ZqxXwycyKM_s&downloadName=Screenshot+2024-12-15+at+17.58.58.png", 
-        right: ""
+        left: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/7d780081-6482-4875-a0c4-b35b7769f97d/Screenshot_2024-12-15_at_17.58.58.png?table=block&id=15d95eca-382d-808a-9944-f94d431a8b77&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=fIQjoYHDtCnNyJ8FeSujKsm6SMht9g5ZqxXwycyKM_s&downloadName=Screenshot+2024-12-15+at+17.58.58.png"
       },
       frameHeight: "300px"
   },
@@ -29,7 +28,6 @@
     description: "In the mid-90s, Nintendo let composer Nuobo Uemasu rearrange the songs from Final Fantasy IV, in collaboration with folk Irish folk artist Máire Breatnach, to create the album Final Fantasy IV: Celtic Moon. This here is the theme song.",
     videoClip: { id: "VRah-zYboFw", start: 24, end: 36 },
     frames: {
-      left: "",
       right: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/c34722d2-7ccc-446f-85db-040d043e48a3/apps.63015.14047651100003233.0972ca9a-2a5a-40da-ab16-debd2d97175b.png?table=block&id=15d95eca-382d-809f-a95b-e5a76f5b96c2&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=MzbQnW-EnuvdtWn_vLky5CterS6-Ft3A-myk9AkCA-4&downloadName=apps.63015.14047651100003233.0972ca9a-2a5a-40da-ab16-debd2d97175b.png"
     },
     frameHeight: "100vh"
@@ -66,7 +64,6 @@
     description: "Welcome to the things-that-people-call-folk-punk-but-I-am-not-really-sure-they-are-that section of the playlist. In honor of our mutual appreciation of that ill defined genre. I started with this absolute classic which you know all about, based off a Japanese folktale of the same name.",
     videoClip: { id: "9S8IM6GQS9g", start: 120, end: 140 },
     frames: {
-            left: "",
             right: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/6b0e99a5-64ad-4ed2-bd79-76c0a02d8b2d/crane.png?table=block&id=15d95eca-382d-802f-8422-f63df466513f&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=mplf4DByKbgVQAhHPgNt2aOqZGe6ciI7X6W8ES7Cah0&downloadName=crane.png"
         }, 
     frameHeight: "300px"
@@ -276,9 +273,14 @@ function loadSong(index) {
         leftFrame.querySelector('img').style.height = frameHeight;
         rightFrame.querySelector('img').style.height = frameHeight;
 
-        // Slide frames into view
-        leftFrame.classList.add('active');
-        rightFrame.classList.add('active');
+      // Slide frames into view
+      if (song.frames.left) {
+                leftFrame.classList.add('active');
+
+      }
+      if (song.frames.right) {
+                rightFrame.classList.add('active');
+      }
         }, 500); // Duration of the animation
         
     } else {
