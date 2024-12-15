@@ -122,7 +122,11 @@
     art: "https://upload.wikimedia.org/wikipedia/en/7/75/Reduxer300x300.png",
     // description: "Ok wow I really didn't wanna have the same artist twice but I really like the instrumentals on this song even if I can't always vibe with the vocals. Also, I can never resist witch content.",
       description: "A lofi and remixed take on the classic American folk song House of the Rising Sun by one of my favorite bands. It's been said their self-remixing is bad. It's been said they should stop trying to insert rap into everything and just stick to their breathy vocals and breezeblocks. But I like their remix album and their take on House of the Rising Sun is one of my favorites so to hell with what is said!",
-    videoClip: { id: "XANPObswCsE", start: 50, end: 60 }
+    videoClip: { id: "XANPObswCsE", start: 50, end: 60 }, 
+      frames: {
+        left: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/0848e706-9684-496b-8d17-bfae48d0d594/house_of_the_rising_sun.png?table=block&id=15d95eca-382d-802c-84ec-f05253747f6b&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=tZo8ou5scnCKkYd-bGtQHGBuGjonRDsheQvCAd_2iMI&downloadName=house+of+the+rising+sun.png"
+      },
+      frameHeight: "400px"
   }, 
     {
     title: "House of the Rising Sun",
