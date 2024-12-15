@@ -54,7 +54,12 @@
     src: "CraneWife3.mp3",
     art: "https://upload.wikimedia.org/wikipedia/en/a/ae/Decemberists_TheCraneWife.jpg",
     description: "Welcome to the things-that-people-call-folk-punk-but-I-am-not-really-sure-they-are-that section of the playlist. In honor of our mutual appreciation of that ill defined genre. I started with this absolute classic which you know all about, based off a Japanese folktale of the same name.",
-    videoClip: { id: "9S8IM6GQS9g", start: 120, end: 140 }
+    videoClip: { id: "9S8IM6GQS9g", start: 120, end: 140 },
+    frames: {
+            left: "",
+            right: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/6b0e99a5-64ad-4ed2-bd79-76c0a02d8b2d/crane.png?table=block&id=15d95eca-382d-802f-8422-f63df466513f&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=mplf4DByKbgVQAhHPgNt2aOqZGe6ciI7X6W8ES7Cah0&downloadName=crane.png"
+        }, 
+    frameHeight: "300px"
   },  
     {
     title: "Cesta je zavřená",
@@ -62,7 +67,12 @@
     src: "Cestajezavrena.mp3",
     art: "https://f4.bcbits.com/img/a1345075055_16.jpg",
     description: "Here is some Czech folk punk I found after going to Prague and becoming unhealthily obsessed with the Czech Republic.",
-    videoClip: { id: "DlC4ZVuBt9Y", start: 2, end: 12 }
+    videoClip: { id: "DlC4ZVuBt9Y", start: 2, end: 12 },
+      frames: {
+        left: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/1f331c0d-ae9c-4ac2-9b4e-c2a085ceb405/a3653457239_16.png?table=block&id=15d95eca-382d-8031-81d9-c67bf5a2f4c0&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=lEEWBZmFYkFKtIvfzxHnGGumNPoNZH2bI6ZCzdolBe4&downloadName=a3653457239_16.png", 
+        right:"https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/ccb4dba0-71c1-4a70-ab3c-032a31aa93e7/hledani-right.png?table=block&id=15d95eca-382d-8032-9bc4-eac7b420f0d3&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=BpUjklTAnku-PmdPggD8bXLeHRVDHAM4314poqnjR2s&downloadName=hledani-right.png"
+      }, 
+      frameHeight: "100vh"
   }, 
     {
     title: "Este Infierno",
@@ -131,6 +141,9 @@ const songDescription = document.getElementById('song-description');
 // const mainContent = document.getElementById('main-content');
 const landingPage = document.getElementById('landing-page');
 const enterButton = document.getElementById('enter-button');
+
+const leftFrame = document.getElementById('left-frame');
+const rightFrame = document.getElementById('right-frame');
 
 let currentSongIndex = 0;
 let isPlaying = false;
@@ -220,6 +233,48 @@ function loadSong(index) {
     const videoClip = song.videoClip;
     if (videoClip) {
         loadVideo(videoClip.id, videoClip.start, videoClip.end);
+    }
+  
+  // Update frames
+//     if (song.frames) {
+//       console.log("Song has frames")
+//         leftFrame.querySelector('img').src = song.frames.left;
+//         rightFrame.querySelector('img').src = song.frames.right;
+
+//         // Trigger animation
+//         leftFrame.classList.add('visible');
+//         rightFrame.classList.add('visible');
+
+//         // Remove animation after it's done
+//         setTimeout(() => {
+//             leftFrame.classList.remove('visible');
+//             rightFrame.classList.remove('visible');
+//         }, 1000); // Duration of the animation
+//     }
+  
+  // Update frames for the selected song
+    if (song.frames) {
+      leftFrame.classList.remove('active');
+            rightFrame.classList.remove('active');
+      // Remove animation after it's done
+        setTimeout(() => {
+            leftFrame.querySelector('img').src = song.frames.left;
+        rightFrame.querySelector('img').src = song.frames.right;
+      
+      // Apply frame height
+        const frameHeight = song.frameHeight || "200px"; // Default height if not specified
+        leftFrame.querySelector('img').style.height = frameHeight;
+        rightFrame.querySelector('img').style.height = frameHeight;
+
+        // Slide frames into view
+        leftFrame.classList.add('active');
+        rightFrame.classList.add('active');
+        }, 500); // Duration of the animation
+        
+    } else {
+        // Hide frames if no frames are defined for the song
+        leftFrame.classList.remove('active');
+        rightFrame.classList.remove('active');
     }
 }
 
