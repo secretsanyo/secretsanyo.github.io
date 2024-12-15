@@ -254,14 +254,15 @@ function loadSong(index) {
   
   // Update frames for the selected song
     if (song.frames) {
+            console.log("Song has frames")
+
       leftFrame.classList.remove('active');
-            rightFrame.classList.remove('active');
-      // Remove animation after it's done
-        setTimeout(() => {
-            leftFrame.querySelector('img').src = song.frames.left;
+      rightFrame.classList.remove('active');
+      setTimeout(() => {
+        leftFrame.querySelector('img').src = song.frames.left;
         rightFrame.querySelector('img').src = song.frames.right;
-      
-      // Apply frame height
+    
+        // Apply frame height
         const frameHeight = song.frameHeight || "200px"; // Default height if not specified
         leftFrame.querySelector('img').style.height = frameHeight;
         rightFrame.querySelector('img').style.height = frameHeight;
@@ -269,13 +270,13 @@ function loadSong(index) {
         // Slide frames into view
         leftFrame.classList.add('active');
         rightFrame.classList.add('active');
-        }, 500); // Duration of the animation
+      }, 500); // Duration of the animation
         
-    } else {
+  } else {
         // Hide frames if no frames are defined for the song
         leftFrame.classList.remove('active');
         rightFrame.classList.remove('active');
-    }
+  }
 }
 
 function updateProgressBar() {
