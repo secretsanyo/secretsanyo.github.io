@@ -64,7 +64,7 @@
     description: "Welcome to the things-that-people-call-folk-punk-but-I-am-not-really-sure-they-are-that section of the playlist. In honor of our mutual appreciation of that ill defined genre. I started with this absolute classic which you know all about, based off a Japanese folktale of the same name.",
     videoClip: { id: "9S8IM6GQS9g", start: 120, end: 140 },
     frames: {
-            right: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/6b0e99a5-64ad-4ed2-bd79-76c0a02d8b2d/crane.png?table=block&id=15d95eca-382d-802f-8422-f63df466513f&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=mplf4DByKbgVQAhHPgNt2aOqZGe6ciI7X6W8ES7Cah0&downloadName=crane.png"
+            right: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/1b92e777-65ec-4920-bc72-cb8fdbe300b8/crane.png?table=block&id=15d95eca-382d-8092-8abc-cb976b41f268&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=lpcrdTft98If6K1m3t6EJFLZJud3CbRkZZc9ehFS92A&downloadName=crane.png"
         }, 
     frameHeight: "300px"
   },  
