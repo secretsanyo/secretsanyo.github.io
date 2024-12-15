@@ -423,3 +423,48 @@ opacity: 0.5;
 
 
 
+
+.frame {
+    position: absolute;
+/*     top: 50%; */
+  top: 0;
+/*     transform: translateY(-50%); */
+/*     opacity: 0; */
+  opacity: 1;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    z-index: 0;
+}
+
+#left-frame {
+    left: 0px; /* Start off-screen on the left */
+    transform: translateX(-100%);
+
+}
+
+#right-frame {
+    right: 0px; /* Start off-screen on the right */
+  transform: translateX(100%);
+}
+
+.frame img {
+/*     width: 300px; Adjust based on frame size */
+/*     height: auto; */
+  width: auto;
+}
+
+#left-frame.active {
+    opacity: 1;
+    transform: translateX(340px);
+/*   border: none; */
+}
+
+#right-frame.active {
+    opacity: 1;
+    transform: translateX(-300px);
+}
+
+
+
+
+
+
