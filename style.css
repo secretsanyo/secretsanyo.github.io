@@ -1,0 +1,425 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+
+body {
+	font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+@keyframes fadeZoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeZoomOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+#landing-page {
+    display: flex;
+  z-index:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: white;
+    position: absolute;
+    z-index: 10;
+    opacity: 1;
+/*     animation: fadeZoomIn 1.5s forwards; */
+}
+
+#landing-page h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeZoomIn 1.5s forwards;
+    animation-delay: 0.2s;
+}
+
+#landing-page p, #second-landing-page p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeZoomIn 1.5s forwards;
+    animation-delay: 0.4s;
+}
+
+#landing-page button {
+    background-color: #1db954;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeZoomIn 1.5s forwards;
+    animation-delay: 0.6s;
+}
+
+
+/*         #landing-page h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        #landing-page p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        #landing-page button {
+            background-color: #1db954;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        } */
+
+        #landing-page button:hover {
+            background-color: #158f4a;
+        }
+
+/*         #main-content {
+            display: none;
+            flex-direction: row;
+            height: 100vh;
+          width:100vw;
+            overflow: hidden;
+          
+        } */
+
+#second-landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: white;
+    position: absolute;
+    z-index: 9; /* Ensure it's below the first landing page initially */
+    opacity: 1;
+/*     animation: fadeZoomIn 1.5s forwards; */
+}
+
+
+#third-landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: white;
+    font-family: 'IM Fell DW Pica', serif;
+    position: absolute;
+    z-index: 9;
+    opacity: 1;
+/*     animation: fadeZoomIn 1s forwards, fadeZoomOut 1s forwards 1s; */
+  animation: fadeOut 1s forwards 1s;
+}
+
+#third-landing-page h1 {
+  font-family: "IM Fell DW Pica", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+
+
+#second-landing-page h1,
+#second-landing-page p,
+#second-landing-page button {
+    opacity: 0;
+    animation: fadeZoomIn 1.5s forwards;
+}
+
+#second-landing-page h1 {
+    font-size: 2.5em;
+    animation-delay: 0.2s;
+}
+
+#second-landing-page p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation-delay: 0.4s;
+}
+
+#second-landing-page button {
+    background-color: #1db954;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation-delay: 0.6s;
+}
+
+#second-landing-page button:hover {
+    background-color: #158f4a;
+}
+
+
+
+@keyframes textPop {
+  0% {
+    font-variation-settings: "wght" 100, "ital" 0;
+  text-shadow: none;
+/*     opacity: 0; */
+  }
+  to {
+/*     opacity: 1; */
+  }
+}
+
+#fancy-text {
+/*   opacity: 0; */
+  display: block;
+  transition: all 0.5s;
+  -webkit-text-stroke: 2px #d6f4f4;
+  font-variation-settings: "wght" 900, "ital" 1;
+  font-size: 50px;
+  text-align: center;
+  color: transparent;
+  font-family: "Meta", sans-serif;
+/*   text-shadow: 10px 10px 0px #07bccc,
+    15px 15px 0px #e601c0,
+    20px 20px 0px #e9019a,
+    25px 25px 0px #f40468,
+    45px 45px 10px #482896; */
+  text-shadow: 3px 3px 0px #07bccc,
+    5px 5px 0px #e601c0,
+    7px 7px 0px #e9019a,
+    9px 9px 0px #f40468,
+    11px 11px 10px #482896;
+  animation:fadeZoomIn 1.5s forwards, textPop 2s forwards;
+  cursor: pointer;
+}
+
+
+
+h2 {
+  	letter-spacing: .25em;
+    font-weight: 300;
+}
+h3 {
+  letter-spacing: .1em;
+  font-weight: 300
+}
+
+#video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw; /* Maintain 16:9 aspect ratio */
+  z-index: -2;
+  pointer-events: none;
+opacity: 0.5;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #video-background {
+    width: 177.78vh; /* Maintain 16:9 aspect ratio */
+    height: 100vh;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #video-background {
+    width: 100vw;
+    height: 56.25vw;
+  }
+}
+
+.background-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent, black calc(0.80*min(100vw, 100vh)));
+  z-index: -1;
+}
+
+.mixtape {
+  flex: 1;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-song {
+  margin-bottom: 20px;
+}
+
+.current-song img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+.progress-container {
+  margin-top: 15px;
+  width: 80%;
+  height: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #1db954;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls button svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.controls button:hover svg {
+  fill: #1db954; /* Spotify green */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.playlist-container {
+  width: 300px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.description-container {
+  width: 300px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+  overflow-y: scroll;
+}
+
+.description {
+  margin: 20px 0;
+  padding: 10px 0;
+  text-align: left;
+  font-size: 18px;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.playlist {
+  padding: 0;
+  margin: 0;
+}
+
+#playlist-title {
+  margin: 10px;
+  font-size: 30px;
+  font-family: "IM Fell DW Pica", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.playlist li {
+  list-style: none;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.playlist li:hover {
+  background-color: #333333;
+}
+
+.playlist li.active {
+  font-weight: bold;
+  color: #1db954;
+}
+
+
+
+
+
