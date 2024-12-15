@@ -14,7 +14,12 @@
     src: "CruelMother.mp3",
     art: "https://www.clashmusic.com/wp-content/uploads/2023/09/OXN.jpg",
     description: "From the same lead singer as Lankum, another sort of experimental modern Irish folk band, this time performing folk tale The Cruel Mother AKA Greenwood Sidey, and trying to bring attention to the persecution of women in the associated 9 minute short featuring Olwen Fouéré.",
-    videoClip: { id: "fuaLiowElxE", start: 192, end: 208 }
+    videoClip: { id: "fuaLiowElxE", start: 192, end: 208 },
+      frames: {
+        left: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/7d780081-6482-4875-a0c4-b35b7769f97d/Screenshot_2024-12-15_at_17.58.58.png?table=block&id=15d95eca-382d-808a-9944-f94d431a8b77&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=fIQjoYHDtCnNyJ8FeSujKsm6SMht9g5ZqxXwycyKM_s&downloadName=Screenshot+2024-12-15+at+17.58.58.png", 
+        right: ""
+      },
+      frameHeight: "300px"
   },
   {
     title: "Final Fantasy IV Theme",
@@ -22,7 +27,12 @@
     src: "FFIVCelticMoon.mp3",
     art: "https://e.snmc.io/i/1200/s/9925f854c505f3280c9d31b572b363e8/1459718",
     description: "In the mid-90s, Nintendo let composer Nuobo Uemasu rearrange the songs from Final Fantasy IV, in collaboration with folk Irish folk artist Máire Breatnach, to create the album Final Fantasy IV: Celtic Moon. This here is the theme song.",
-    videoClip: { id: "VRah-zYboFw", start: 24, end: 36 }
+    videoClip: { id: "VRah-zYboFw", start: 24, end: 36 },
+    frames: {
+      left: "",
+      right: "https://file.notion.so/f/f/f5a10d67-eb39-43c9-92f5-2a51adcd523f/c34722d2-7ccc-446f-85db-040d043e48a3/apps.63015.14047651100003233.0972ca9a-2a5a-40da-ab16-debd2d97175b.png?table=block&id=15d95eca-382d-809f-a95b-e5a76f5b96c2&spaceId=f5a10d67-eb39-43c9-92f5-2a51adcd523f&expirationTimestamp=1734393600000&signature=MzbQnW-EnuvdtWn_vLky5CterS6-Ft3A-myk9AkCA-4&downloadName=apps.63015.14047651100003233.0972ca9a-2a5a-40da-ab16-debd2d97175b.png"
+    },
+    frameHeight: "100vh"
   },
     {
     title: "Tegami",
@@ -254,15 +264,14 @@ function loadSong(index) {
   
   // Update frames for the selected song
     if (song.frames) {
-            console.log("Song has frames")
-
       leftFrame.classList.remove('active');
-      rightFrame.classList.remove('active');
-      setTimeout(() => {
-        leftFrame.querySelector('img').src = song.frames.left;
+            rightFrame.classList.remove('active');
+      // Remove animation after it's done
+        setTimeout(() => {
+            leftFrame.querySelector('img').src = song.frames.left;
         rightFrame.querySelector('img').src = song.frames.right;
-    
-        // Apply frame height
+      
+      // Apply frame height
         const frameHeight = song.frameHeight || "200px"; // Default height if not specified
         leftFrame.querySelector('img').style.height = frameHeight;
         rightFrame.querySelector('img').style.height = frameHeight;
@@ -270,13 +279,13 @@ function loadSong(index) {
         // Slide frames into view
         leftFrame.classList.add('active');
         rightFrame.classList.add('active');
-      }, 500); // Duration of the animation
+        }, 500); // Duration of the animation
         
-  } else {
+    } else {
         // Hide frames if no frames are defined for the song
         leftFrame.classList.remove('active');
         rightFrame.classList.remove('active');
-  }
+    }
 }
 
 function updateProgressBar() {
