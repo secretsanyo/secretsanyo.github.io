@@ -113,7 +113,7 @@
     art: "https://m.media-amazon.com/images/I/71O5qY00AfL._UF350,350_QL50_.jpg",
     // description: "Ok wow I really didn't wanna have the same artist twice but I really like the instrumentals on this song even if I can't always vibe with the vocals. Also, I can never resist witch content.",
       description: "Natalia Lafourcade is sort of the preeminent Mexican folk pop artist imo, perhaps together with Mon Laferte. There's some definitely traditional rhythms to her music, but it is decidedly pop. Her voice is wonderful and she's one of my favorite singers. Plus, she has the best name. ",
-    videoClip: { id: "T2t_rKeCElk", start: 20, end: 30 }
+    videoClip: { id: "gd4jntP0tco", start: 5, end: 30 }
   }, 
     {
     title: "House of the Rising Sun",
